@@ -8,7 +8,3 @@ function HeaderItem({ Icon, title }) {
 }
 export default HeaderItem;
 
-{
-	/* <Icon />
-        <p>{title}</p>  */
-}

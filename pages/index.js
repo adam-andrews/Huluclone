@@ -6,7 +6,6 @@ import requests from "../utils/requests";
 
 //Client render
 export default function Home({ results }) {
-  console.log(results)
   return (
     <div>
       <Head>
