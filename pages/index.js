@@ -6,6 +6,7 @@ import requests from "../utils/requests";
 
 //Client render
 export default function Home({ results }) {
+  console.log(results)
   return (
     <div>
       <Head>
@@ -15,7 +16,7 @@ export default function Home({ results }) {
 
       <Header />
       <Nav />
-      <Results />
+      <Results results={results} />
     </div>
   );
 }
@@ -25,9 +26,7 @@ export async function getServerSideProps(context) {
   const genre = context.query.genre;
 
   const request = await fetch(
-    `https://api.themoviedb.org/3${
-      requests[genre]?.url || requests.fetchTrending.url
-    }`
+    "https://api.themoviedb.org/3/trending/all/week?api_key=cb78e50ee62e916371309611343bebd6&language=en-US"
   ).then((res) => res.json());
 
   return {
